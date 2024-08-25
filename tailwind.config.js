@@ -5,6 +5,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      "digital-7": ["digital-7", "digital-7"],
+      "typo-digit": ["typo-digit", "typo-digit"],
+    },
     extend: {},
   },
   plugins: [],

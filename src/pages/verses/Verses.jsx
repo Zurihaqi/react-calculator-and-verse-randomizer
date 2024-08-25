@@ -23,6 +23,9 @@ export default function Verses() {
 
   useEffect(() => {
     fetchSurah();
+    setTimeout(() => {
+      setAnimate(false);
+    }, 700);
   }, []);
 
   return (
