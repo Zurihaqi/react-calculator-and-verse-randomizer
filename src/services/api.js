@@ -3,7 +3,7 @@ import axios from 'axios';
 const api = axios.create({
     // baseURL: 'http://localhost:3000/', // local
     baseURL: 'https://json-server-vercel-puce-gamma.vercel.app/api/', // Vercel deployment
-    timeout: 1000,
+    timeout: 5000,
 });
 
 export const getSurah = async () => {

@@ -23,8 +23,8 @@ export default class Buttons extends Component {
           </span>
         </button>
         <button
-          onClick={() => {
-            fetchSurah();
+          onClick={async () => {
+            await fetchSurah();
             // console.log(surah);
             setAnimate(true);
             setTimeout(() => {
