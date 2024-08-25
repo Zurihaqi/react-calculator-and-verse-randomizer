@@ -9,6 +9,9 @@ function App() {
       <div className="text-center m-auto">
         <Outlet />
       </div>
+      <footer className="fixed bottom-0 mb-4 text-center text-gray-700 font-light text-sm">
+        ©{new Date().getFullYear()} Zul Fahri Baihaqi
+      </footer>
     </div>
   );
 }

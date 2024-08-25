@@ -16,6 +16,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "calculator";
+    src: url("./assets/fonts/calculator/Calculator.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 .overflow-x-clip {
     overflow-x: clip;
 }

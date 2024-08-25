@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Calculator from "./pages/calculator/Calculator.jsx";
 import Verses from "./pages/verses/Verses.jsx";
 import Home from "./pages/Home.jsx";
+import PageTitle from "./components/PageTitle.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,15 +16,30 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Home />,
+        element: (
+          <>
+            <PageTitle title="Home" />
+            <Home />
+          </>
+        ),
       },
       {
         path: "calculator",
-        element: <Calculator />,
+        element: (
+          <>
+            <PageTitle title="Calculator" />
+            <Calculator />
+          </>
+        ),
       },
       {
         path: "verses",
-        element: <Verses />,
+        element: (
+          <>
+            <PageTitle title="Verses" />
+            <Verses />
+          </>
+        ),
       },
     ],
   },

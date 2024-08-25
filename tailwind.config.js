@@ -8,6 +8,7 @@ export default {
     fontFamily: {
       "digital-7": ["digital-7", "digital-7"],
       "typo-digit": ["typo-digit", "typo-digit"],
+      "calculator": ["calculator", "calculator"],
     },
     extend: {},
   },
