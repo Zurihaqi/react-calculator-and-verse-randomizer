@@ -40,7 +40,8 @@ export default function CalcButtons({ display, setDisplay }) {
 
   const handleEvaluate = () => {
     try {
-      const result = eval(display);
+      const formattedDisplay = display.replace(/(\d+)\(/g, "$1*(");
+      const result = eval(formattedDisplay);
       setDisplay(result.toString());
     } catch (error) {
       console.error(error);
