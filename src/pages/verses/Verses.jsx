@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getSurah } from "../../services/api";
 import Buttons from "./components/Buttons";
-import Spinner from "/spinner3.gif";
+import Spinner from "/spinner4.gif";
 
 export default function Verses() {
   const [surah, setSurah] = useState({});
@@ -80,7 +80,7 @@ export default function Verses() {
         ) : (
           <img
             src={Spinner}
-            className="w-40 h-45 mx-auto my-auto"
+            className="w-10 h-10 mx-auto my-auto"
             alt="loading"
           />
         )}
