@@ -5,5 +5,5 @@
 * npm run dev
 
 # Screenshots
-![alt text](image.png)
-![alt text](<Screenshot from 2024-08-25 15-17-13.png>)
+![alt text](Documentation/verses.png)
+![alt text](Documentation/calculator.png)
