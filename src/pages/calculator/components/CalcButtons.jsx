@@ -2,9 +2,17 @@ import PropTypes from "prop-types";
 
 export default function CalcButtons({ display, setDisplay }) {
   const handleClick = (value) => {
-    // const operators = ["+", "-", "/", "*", "%"];
+    const operators = ["+", "-", "/", "*", "%"];
+    const lastDispChar = display.length - 1;
 
-    if (display[0] === "0") {
+    if (
+      operators.includes(value) &&
+      operators.includes(display.charAt(lastDispChar))
+    ) {
+      setDisplay((prevDisplay) => {
+        return `${prevDisplay.slice(0, -1) + value}`;
+      });
+    } else if (display[0] === "0") {
       setDisplay(() => {
         return value;
       });
