@@ -23,6 +23,17 @@ export default function CalcButtons({ display, setDisplay }) {
     }
   };
 
+  const handleBracket = () => {
+    const openBracketsCount = (display.match(/\(/g) || []).length;
+    const closeBracketsCount = (display.match(/\)/g) || []).length;
+
+    if (openBracketsCount > closeBracketsCount) {
+      setDisplay((prevDisplay) => prevDisplay + ")");
+    } else {
+      handleClick("(");
+    }
+  };
+
   const handleEvaluate = () => {
     try {
       const result = eval(display);
@@ -91,7 +102,7 @@ export default function CalcButtons({ display, setDisplay }) {
         <div className="grid grid-flow-row grid-rows-5 gap-2">
           <button
             className="hover:bg-gray-600 bg-gray-500 p-2 rounded-md font-bold"
-            onClick={() => handleClick("(")}
+            onClick={() => handleBracket()}
           >
             ()
           </button>
