@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
     // baseURL: 'http://localhost:3000/', // local
-    baseURL: 'https://react-calculator-and-verse-randomizer.vercel.app/api/server/', // Vercel deployment
+    baseURL: 'https://react-calculator-and-verse-randomizer.vercel.app/api/', // Vercel deployment
     timeout: 1000,
 });
 
