@@ -12,6 +12,10 @@ export default function CalcButtons({ display, setDisplay }) {
       setDisplay((prevDisplay) => {
         return `${prevDisplay.slice(0, -1) + value}`;
       });
+    } else if (display[0] === "0" && operators.includes(value)) {
+      setDisplay(() => {
+        return "0";
+      });
     } else if (display[0] === "0") {
       setDisplay(() => {
         return value;
