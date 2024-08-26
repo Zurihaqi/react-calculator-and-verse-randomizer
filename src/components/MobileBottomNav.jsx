@@ -5,15 +5,15 @@ import house_icon from "/house_icon.png";
 
 export default function MobileBottomNav() {
   return (
-    <div className="bottom-0 left-0 w-full p-2 bg-black sm:hidden sticky">
+    <div className="bottom-0 left-0 w-full p-2 bg-black sm:hidden sticky z-50">
       <div className="mx-auto flex justify-evenly">
         <NavLink
           to="/"
           type="button"
           className={({ isActive }) =>
             isActive
-              ? "border-2 bg-slate-100 flex items-center rounded-lg p-2"
-              : "hover:border-2 hover:bg-slate-100 flex items-center rounded-lg p-2"
+              ? "bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
+              : "hover:bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
           }
         >
           <img src={house_icon} className="w-10" />
@@ -23,8 +23,8 @@ export default function MobileBottomNav() {
           type="button"
           className={({ isActive }) =>
             isActive
-              ? "border-2 bg-slate-100 flex items-center rounded-lg p-2"
-              : "hover:border-2 hover:bg-slate-100 flex items-center rounded-lg p-2"
+              ? "bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
+              : "hover:bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
           }
         >
           <img src={calc_icon} className="w-10" />
@@ -34,8 +34,8 @@ export default function MobileBottomNav() {
           type="button"
           className={({ isActive }) =>
             isActive
-              ? "border-2 bg-slate-100 flex items-center rounded-lg p-2"
-              : "hover:border-2 hover:bg-slate-100 flex items-center rounded-lg p-2"
+              ? "bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
+              : "hover:bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
           }
         >
           <img src={verse_icon} className="w-10" />

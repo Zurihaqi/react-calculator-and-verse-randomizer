@@ -7,7 +7,7 @@ export default function Sidebar() {
   return (
     <aside
       id="default-sidebar"
-      className="fixed top-0 left-0 z-40 w-20 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      className="fixed top-0 left-0 z-50 w-20 h-screen transition-transform -translate-x-full sm:translate-x-0"
       aria-label="Sidebar"
     >
       <div className="h-full px-3 py-4 overflow-y-auto bg-black">
@@ -22,8 +22,8 @@ export default function Sidebar() {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "border-2 bg-slate-100 flex items-center rounded-lg p-2"
-                  : "hover:border-2 hover:bg-slate-100 flex items-center rounded-lg p-2"
+                  ? "bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
+                  : "hover:bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
               }
             >
               <img src={house_icon} className="w-10" />
@@ -34,8 +34,8 @@ export default function Sidebar() {
               to="/calculator"
               className={({ isActive }) =>
                 isActive
-                  ? "border-2 bg-slate-100 flex items-center rounded-lg p-2"
-                  : "hover:border-2 hover:bg-slate-100 flex items-center rounded-lg p-2"
+                  ? "bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
+                  : "hover:bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
               }
             >
               <img src={calc_icon} className="w-10" />
@@ -46,8 +46,8 @@ export default function Sidebar() {
               to="/verses"
               className={({ isActive }) =>
                 isActive
-                  ? "border-2 bg-slate-100 flex items-center rounded-lg p-2"
-                  : "hover:border-2 hover:bg-slate-100 flex items-center rounded-lg p-2"
+                  ? "bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
+                  : "hover:bg-gradient-to-tr from-red-500 to-amber-700 flex items-center rounded-lg p-2"
               }
             >
               <img src={verse_icon} className="w-10" />
