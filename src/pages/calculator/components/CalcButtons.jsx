@@ -85,10 +85,10 @@ export default function CalcButtons({ display, setDisplay }) {
           ⌫
         </button>
       </div>
-      <div className="grid grid-flow-col grid-cols-4 bg-gray-800 px-4 pb-4 pt-2 rounded-md gap-2 text-white">
+      <div className="grid grid-flow-col grid-cols-4 px-4 pb-4 pt-2 rounded-md gap-2 text-white">
         <div className="grid grid-flow-row grid-rows-5 gap-2">
           <button
-            className="hover:bg-gray-600 bg-gray-500 p-2 rounded-md font-bold"
+            className="hover:bg-red-800 bg-red-700 p-2 rounded-md font-bold"
             onClick={handleClear}
           >
             C
@@ -120,7 +120,7 @@ export default function CalcButtons({ display, setDisplay }) {
         </div>
         <div className="grid grid-flow-row grid-rows-5 gap-2">
           <button
-            className="hover:bg-gray-600 bg-gray-500 p-2 rounded-md font-bold"
+            className="hover:bg-gray-800 bg-gray-700 p-2 rounded-md font-bold"
             onClick={() => handleBracket()}
           >
             ()
@@ -152,7 +152,7 @@ export default function CalcButtons({ display, setDisplay }) {
         </div>
         <div className="grid grid-flow-row grid-rows-5 gap-2">
           <button
-            className="hover:bg-gray-600 bg-gray-500 p-2 rounded-md font-bold"
+            className="hover:bg-gray-800 bg-gray-700 p-2 rounded-md font-bold"
             onClick={() => handleClick("%")}
           >
             %
@@ -184,31 +184,31 @@ export default function CalcButtons({ display, setDisplay }) {
         </div>
         <div className="grid grid-flow-row grid-rows-5 gap-2">
           <button
-            className="hover:bg-gray-600 bg-gray-500 p-2 rounded-md font-bold"
+            className="hover:bg-gray-800 bg-gray-700 p-2 rounded-md font-bold"
             onClick={() => handleClick("/")}
           >
             /
           </button>
           <button
-            className="hover:bg-gray-600 bg-gray-500 p-2 rounded-md font-bold"
+            className="hover:bg-gray-800 bg-gray-700 p-2 rounded-md font-bold"
             onClick={() => handleClick("*")}
           >
             *
           </button>
           <button
-            className="hover:bg-gray-600 bg-gray-500 p-2 rounded-md font-bold"
+            className="hover:bg-gray-800 bg-gray-700 p-2 rounded-md font-bold"
             onClick={() => handleClick("-")}
           >
             -
           </button>
           <button
-            className="hover:bg-gray-600 bg-gray-500 p-2 rounded-md font-bold"
+            className="hover:bg-gray-800 bg-gray-700 p-2 rounded-md font-bold"
             onClick={() => handleClick("+")}
           >
             +
           </button>
           <button
-            className="hover:bg-gray-600 bg-gray-500 p-2 rounded-md font-bold"
+            className="hover:bg-gray-800 bg-gray-700 p-2 rounded-md font-bold"
             onClick={handleEvaluate}
           >
             =

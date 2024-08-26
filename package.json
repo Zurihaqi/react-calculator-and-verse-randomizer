@@ -10,11 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
     "animate.css": "^4.1.1",
     "axios": "^1.7.5",
     "json-server": "^1.0.0-beta.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-loading-skeleton": "^3.4.0",
     "react-router-dom": "^6.26.1",
     "vite-plugin-vercel": "^9.0.1"
   },
