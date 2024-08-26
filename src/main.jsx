@@ -8,12 +8,22 @@ import Calculator from "./pages/calculator/Calculator.jsx";
 import Verses from "./pages/verses/Verses.jsx";
 import Home from "./pages/Home.jsx";
 import PageTitle from "./components/PageTitle.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "*",
+        element: (
+          <>
+            <PageTitle title="404" />
+            <NotFound />
+          </>
+        ),
+      },
       {
         path: "",
         element: (

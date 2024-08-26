@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import MobileBottomNav from "./components/MobileBottomNav";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -10,9 +11,7 @@ function App() {
       <div className="text-center m-auto">
         <Outlet />
       </div>
-      <footer className="bottom-0 my-4 text-center text-gray-700 font-light text-sm">
-        ©{new Date().getFullYear()} Zul Fahri Baihaqi
-      </footer>
+      <Footer />
       <MobileBottomNav />
     </div>
   );

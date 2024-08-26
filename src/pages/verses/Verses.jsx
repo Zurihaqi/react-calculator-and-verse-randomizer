@@ -22,11 +22,11 @@ export default function Verses() {
   };
 
   useEffect(() => {
-    fetchSurah();
+    if (Object.keys(surah).length === 0) fetchSurah();
     setTimeout(() => {
       setAnimate(false);
     }, 700);
-  }, []);
+  }, [surah]);
 
   return (
     <>
@@ -35,7 +35,7 @@ export default function Verses() {
           <div>
             <blockquote className="space-y-5">
               <p
-                className={`text-2xl font-medium text-white mt-4 ${
+                className={`sm:text-4xl text-3xl font-medium text-white mt-4 ${
                   animate ? "animate__animated animate__fadeIn" : ""
                 }`}
               >

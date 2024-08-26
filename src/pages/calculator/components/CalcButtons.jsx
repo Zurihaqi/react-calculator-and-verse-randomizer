@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
 export default function CalcButtons({ display, setDisplay }) {
-  const handleClick = (value) => {
-    const operators = ["+", "-", "/", "*", "%"];
-    const lastDispChar = display.length - 1;
+  const lastDispChar = display.length - 1;
+  const operators = ["+", "-", "/", "*", "%"];
 
+  const handleClick = (value) => {
     if (
       operators.includes(value) &&
       operators.includes(display.charAt(lastDispChar))
@@ -35,6 +35,20 @@ export default function CalcButtons({ display, setDisplay }) {
       setDisplay((prevDisplay) => prevDisplay + ")");
     } else {
       handleClick("(");
+    }
+  };
+
+  const handleNegativePositive = () => {
+    const lastChar = display.charAt(lastDispChar);
+
+    if (!operators.includes(lastChar) && lastChar !== "(" && lastChar !== "") {
+      const match = display.match(/(-?\d+\.?\d*)$/);
+      if (match) {
+        const number = match[0];
+        const isNegative = number.startsWith("-");
+        const newNumber = isNegative ? number.slice(1) : `-${number}`;
+        setDisplay(display.slice(0, match.index) + newNumber);
+      }
     }
   };
 
@@ -99,7 +113,7 @@ export default function CalcButtons({ display, setDisplay }) {
           </button>
           <button
             className="hover:bg-amber-700 bg-amber-600 p-2 rounded-md font-bold"
-            onClick={() => handleClick("-")}
+            onClick={() => handleNegativePositive()}
           >
             +/-
           </button>
