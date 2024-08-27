@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { SurahContext } from "../../contexts/SurahContext";
 import { getSurah } from "../../services/api";
 import Buttons from "./components/Buttons";
 // import Spinner from "/spinner4.gif";
@@ -6,7 +7,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Verses() {
-  const [surah, setSurah] = useState({});
+  const { surah, setSurah } = useContext(SurahContext);
   const [randomizer, setRandomizer] = useState(1);
   const [animate, setAnimate] = useState(true);
 
@@ -28,7 +29,7 @@ export default function Verses() {
     setTimeout(() => {
       setAnimate(false);
     }, 700);
-  }, [surah]);
+  });
 
   return (
     <>

@@ -8,9 +8,11 @@ import Footer from "./components/Footer";
 
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import { SurahContext } from "./contexts/SurahContext";
 
 function App() {
   const [init, setInit] = useState(false);
+  const [surah, setSurah] = useState({});
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -22,7 +24,7 @@ function App() {
 
   return (
     init && (
-      <>
+      <SurahContext.Provider value={{ surah: surah, setSurah: setSurah }}>
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 ">
           <Sidebar />
           <div className="text-center m-auto z-20">
@@ -144,7 +146,7 @@ function App() {
           <Footer />
           <MobileBottomNav />
         </div>
-      </>
+      </SurahContext.Provider>
     )
   );
 }
