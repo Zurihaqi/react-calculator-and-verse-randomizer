@@ -67,7 +67,12 @@ export default class Buttons extends Component {
       <div>
         <button
           onClick={() => {
-            setRandomizer(() => (randomizer > 1 ? randomizer - 1 : randomizer));
+            if (randomizer > 1) {
+              setRandomizer(randomizer - 1);
+            } else {
+              setRandomizer(numberOfAyah);
+              fetchSurah(surahNumber - 1);
+            }
             setAnimate(true);
             setTimeout(() => {
               setAnimate(false);
@@ -109,9 +114,12 @@ export default class Buttons extends Component {
         </button>
         <button
           onClick={() => {
-            setRandomizer(() =>
-              randomizer < numberOfAyah ? randomizer + 1 : randomizer
-            );
+            if (randomizer < numberOfAyah) {
+              setRandomizer(randomizer + 1);
+            } else {
+              setRandomizer(1);
+              fetchSurah(surahNumber + 1);
+            }
             setAnimate(true);
             setTimeout(() => {
               setAnimate(false);

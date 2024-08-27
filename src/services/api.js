@@ -6,10 +6,10 @@ const api = axios.create({
     timeout: 5000,
 });
 
-export const getSurah = async () => {
+export const getSurah = async (id) => {
     try {
         const randomizer = Math.floor(Math.random() * (114 - 1 + 1) + 1);
-        const response = await api.get(`/${randomizer}`);
+        const response = await api.get(`/${id ? id : randomizer}`);
         // console.log(response);
         
         return response.data;

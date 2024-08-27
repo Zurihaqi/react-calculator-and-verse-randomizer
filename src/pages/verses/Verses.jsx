@@ -12,10 +12,10 @@ export default function Verses() {
   // const [randomizer, setRandomizer] = useState(1);
   const [animate, setAnimate] = useState(true);
 
-  const fetchSurah = async () => {
-    const result = await getSurah();
+  const fetchSurah = async (id) => {
+    const result = await getSurah(id);
 
-    if (result) {
+    if (result && !id) {
       setSurah(result);
       setRandomizer(
         Math.floor(Math.random() * (+result.number_of_ayah - 1 + 1) + 1)
@@ -23,6 +23,8 @@ export default function Verses() {
 
       // console.log(randomizer);
     }
+
+    setSurah(result);
   };
 
   useEffect(() => {
@@ -46,7 +48,7 @@ export default function Verses() {
             >
               <span className="font-alquran-ali leading-relaxed">
                 {(surah.text?.[randomizer] &&
-                  "﴾" + surah.text?.[randomizer] + "﴿") || (
+                  `﴾${randomizer}﴿ ` + surah.text?.[randomizer]) || (
                   <Skeleton count={1} />
                 )}
               </span>{" "}
