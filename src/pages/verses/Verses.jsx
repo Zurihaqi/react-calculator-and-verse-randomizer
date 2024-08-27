@@ -29,20 +29,22 @@ export default function Verses() {
     if (Object.keys(surah).length === 0) fetchSurah();
     setTimeout(() => {
       setAnimate(false);
-    }, 700);
+    }, 500);
   });
 
   return (
     <>
-      <figure className="max-w-screen-md mt-8 mx-8 sm:mx-auto text-center shadow-lg bg-gradient-to-b from-slate-700/70 to-slate-800 p-4 rounded-xl">
+      <figure className="sm:max-w-screen-lg max-w-screen-md mt-8 mx-8 sm:mx-auto text-center p-4 rounded-xl">
         <div>
           <blockquote className="space-y-5">
             <p
               className={`sm:text-4xl text-3xl font-medium text-white mt-4 ${
-                animate ? "animate__animated animate__fadeIn" : ""
+                animate
+                  ? "animate__animated animate__fadeInUp animate__faster"
+                  : ""
               }`}
             >
-              <span className="text-amber-300">
+              <span className="font-alquran-ali leading-relaxed">
                 {(surah.text?.[randomizer] &&
                   "﴾" + surah.text?.[randomizer] + "﴿") || (
                   <Skeleton count={1} />
@@ -51,20 +53,23 @@ export default function Verses() {
             </p>
 
             <p
-              className={`text-lg italic font-light font-sans text-white ${
-                animate ? "animate__animated animate__fadeIn" : ""
+              className={`text-lg italic font-semibold font-sans text-white ${
+                animate
+                  ? "animate__animated animate__fadeInUp animate__faster"
+                  : ""
               }`}
             >
-              {surah.translations?.id?.text?.[randomizer] || (
+              {(surah.translations &&
+                '"' + surah.translations?.id?.text?.[randomizer] + '"') || (
                 <Skeleton count={1} />
               )}
             </p>
             <hr />
             <div className="overflow-auto max-h-20 mx-auto px-4">
               <p
-                className={`text-md font-normal text-slate-400 ${
+                className={`text-md font-normal text-slate-300 ${
                   animate
-                    ? "animate__animated animate__fadeInUp animate__faster"
+                    ? "animate__animated animate__fadeInDown animate__faster"
                     : ""
                 }`}
               >
@@ -93,6 +98,7 @@ export default function Verses() {
         fetchSurah={fetchSurah}
         numberOfAyah={+surah.number_of_ayah}
         setAnimate={setAnimate}
+        surahNumber={+surah.number}
       />
     </>
   );

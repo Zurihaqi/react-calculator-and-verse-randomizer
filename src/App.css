@@ -23,6 +23,20 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "amiri-quran";
+    src: url("./assets//fonts//Amiri_Quran/AmiriQuran-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "alquran-ali";
+    src: url("./assets//fonts/al-quran-ali-font/AlQuranAli-L3A83.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 .overflow-x-clip {
     overflow-x: clip;
 }

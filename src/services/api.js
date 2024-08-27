@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    // baseURL: 'http://localhost:3000/', // local
+    // baseURL: 'http://localhost:3001/', // local
     baseURL: 'https://json-server-vercel-puce-gamma.vercel.app/api/', // Vercel deployment
     timeout: 5000,
 });
