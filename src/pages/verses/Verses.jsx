@@ -7,8 +7,9 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Verses() {
-  const { surah, setSurah } = useContext(SurahContext);
-  const [randomizer, setRandomizer] = useState(1);
+  const { surah, setSurah, randomizer, setRandomizer } =
+    useContext(SurahContext);
+  // const [randomizer, setRandomizer] = useState(1);
   const [animate, setAnimate] = useState(true);
 
   const fetchSurah = async () => {

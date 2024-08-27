@@ -13,6 +13,7 @@ import { SurahContext } from "./contexts/SurahContext";
 function App() {
   const [init, setInit] = useState(false);
   const [surah, setSurah] = useState({});
+  const [randomizer, setRandomizer] = useState(1);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -24,7 +25,14 @@ function App() {
 
   return (
     init && (
-      <SurahContext.Provider value={{ surah: surah, setSurah: setSurah }}>
+      <SurahContext.Provider
+        value={{
+          surah: surah,
+          setSurah: setSurah,
+          randomizer: randomizer,
+          setRandomizer: setRandomizer,
+        }}
+      >
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 ">
           <Sidebar />
           <div className="text-center m-auto z-20">
