@@ -6,6 +6,7 @@ import {
   faShuffle,
   faVolumeHigh,
   faPause,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button";
 
@@ -32,7 +33,7 @@ export default class ButtonGroup extends Component {
       .reduce((sum, ayahCount) => sum + ayahCount, ayahNumber);
   }
 
-  toggleAudio(surahNumber, ayahNumber, bitrate = 128, edition = "ar.alafasy") {
+  toggleAudio(surahNumber, ayahNumber, bitrate = 64, edition = "ar.alafasy") {
     const globalAyahNumber = this.getGlobalAyahNumber(surahNumber, ayahNumber);
     const audioSrc = `https://cdn.islamic.network/quran/audio/${bitrate}/${edition}/${globalAyahNumber}.mp3`;
 
@@ -126,12 +127,16 @@ export default class ButtonGroup extends Component {
           onClick={() => this.handleButtonClick("prev")}
         />
         <Button
-          icon={faShuffle}
+          icon={this.state.isLoading ? faSpinner : faShuffle}
           onClick={async () => {
             this.setState({ isLoading: true });
             await fetchSurah();
-            setTimeout(() => this.setAnimate(false), 500);
+            setTimeout(() => {
+              this.setAnimate(false);
+            }, 500);
+            this.setState({ isLoading: false });
           }}
+          isLoading={this.state.isLoading}
         />
         <Button
           icon={isPlaying ? faPause : faVolumeHigh}

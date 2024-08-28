@@ -26,10 +26,12 @@ export default function Verses() {
   };
 
   useEffect(() => {
-    if (Object.keys(surah).length === 0) fetchSurah();
-    setTimeout(() => {
-      setAnimate(false);
-    }, 500);
+    if (Object.keys(surah).length === 0) {
+      fetchSurah();
+      setTimeout(() => {
+        setAnimate(false);
+      }, 500);
+    }
   });
 
   return (
