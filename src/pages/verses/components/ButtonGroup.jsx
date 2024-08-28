@@ -38,11 +38,14 @@ export default class ButtonGroup extends Component {
 
     if (!this.audio) {
       this.audio = new Audio(audioSrc);
+      this.audio.addEventListener("play", this.handlePlay);
+      this.audio.addEventListener("pause", this.handlePause);
+      this.audio.addEventListener("ended", this.handlePause);
     } else if (this.audio.src !== audioSrc) {
       this.audio.src = audioSrc;
     }
 
-    if (this.audio.paused) {
+    if (this.audio.paused || this.audio.ended) {
       this.audio.play();
       this.setState({ isPlaying: true });
     } else {
@@ -84,9 +87,33 @@ export default class ButtonGroup extends Component {
     }
 
     setRandomizer(newRandomizer);
-    setAnimate(true);
-    setTimeout(() => setAnimate(false), 300);
+    await setAnimate(true);
+    setTimeout(() => setAnimate(false), 500);
   };
+
+  handlePlay = () => {
+    this.setState({ isPlaying: true });
+  };
+
+  handlePause = () => {
+    this.setState({ isPlaying: false });
+  };
+
+  componentDidMount() {
+    if (this.audio) {
+      this.audio.addEventListener("play", this.handlePlay);
+      this.audio.addEventListener("pause", this.handlePause);
+      this.audio.addEventListener("ended", this.handlePause);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.audio) {
+      this.audio.removeEventListener("play", this.handlePlay);
+      this.audio.removeEventListener("pause", this.handlePause);
+      this.audio.removeEventListener("ended", this.handlePause);
+    }
+  }
 
   render() {
     const { fetchSurah } = this.props;
