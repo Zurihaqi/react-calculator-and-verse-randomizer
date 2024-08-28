@@ -5,7 +5,7 @@ import house_icon from "/house_icon.png";
 
 export default function MobileBottomNav() {
   return (
-    <div className="bottom-0 left-0 w-full p-2 bg-black sm:hidden sticky z-50">
+    <div className="bottom-0 left-0 w-full p-2 bg-black lg:hidden sticky z-50">
       <div className="mx-auto flex justify-evenly">
         <NavLink
           to="/"

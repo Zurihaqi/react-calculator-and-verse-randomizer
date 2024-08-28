@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { SurahContext } from "../../contexts/SurahContext";
 import { getSurah } from "../../services/api";
-import Buttons from "./components/Buttons";
+import ButtonGroup from "./components/ButtonGroup";
 // import Spinner from "/spinner4.gif";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -17,9 +17,7 @@ export default function Verses() {
 
     if (result && !id) {
       setSurah(result);
-      setRandomizer(
-        Math.floor(Math.random() * (+result.number_of_ayah - 1 + 1) + 1)
-      );
+      setRandomizer(Math.floor(Math.random() * +result.number_of_ayah + 1));
 
       // console.log(randomizer);
     }
@@ -94,7 +92,7 @@ export default function Verses() {
         </div>
       </figure>
 
-      <Buttons
+      <ButtonGroup
         setRandomizer={setRandomizer}
         randomizer={randomizer}
         fetchSurah={fetchSurah}
