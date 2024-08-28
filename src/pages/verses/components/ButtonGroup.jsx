@@ -85,7 +85,7 @@ export default class ButtonGroup extends Component {
 
     setRandomizer(newRandomizer);
     setAnimate(true);
-    setTimeout(() => setAnimate(false), 500);
+    setTimeout(() => setAnimate(false), 300);
   };
 
   render() {

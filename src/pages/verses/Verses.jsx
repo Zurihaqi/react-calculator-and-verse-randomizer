@@ -46,7 +46,7 @@ export default function Verses() {
             >
               <span className="font-alquran-ali leading-relaxed">
                 {(surah.text?.[randomizer] &&
-                  `﴾${randomizer}﴿ ` + surah.text?.[randomizer]) || (
+                  `${surah.text?.[randomizer]} {${randomizer}}`) || (
                   <Skeleton count={1} />
                 )}
               </span>{" "}
