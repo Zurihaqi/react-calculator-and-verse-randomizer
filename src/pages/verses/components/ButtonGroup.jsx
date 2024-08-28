@@ -130,7 +130,7 @@ export default class ButtonGroup extends Component {
           onClick={async () => {
             this.setState({ isLoading: true });
             await fetchSurah();
-            this.setState({ isLoading: false });
+            setTimeout(() => this.setAnimate(false), 500);
           }}
         />
         <Button
