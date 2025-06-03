@@ -19,7 +19,7 @@
     "animate.css": "^4.1.1",
     "axios": "^1.8.2",
     "json-server": "^1.0.0-beta.2",
-    "react": "^18.3.1",
+    "react": "^19.1.0",
     "react-dom": "^18.3.1",
     "react-loading-skeleton": "^3.5.0",
     "react-router-dom": "^6.26.1",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",
-    "@types/react": "^18.3.3",
+    "@types/react": "^19.1.6",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.4.1",
     "concurrently": "^9.1.2",
