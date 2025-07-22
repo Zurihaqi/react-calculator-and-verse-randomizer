@@ -1,18 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      "digital-7": ["digital-7", "digital-7"],
-      "typo-digit": ["typo-digit", "typo-digit"],
-      "calculator": ["calculator", "calculator"],
-      "amiri-quran": ["amiri-quran", "amiri-quran"],
-      "alquran-ali": ["alquran-ali", "alquran-ali"],
+    extend: {
+      fontFamily: {
+        digital: ["digital-7", "sans-serif"],
+        typo: ["typo-digit", "sans-serif"],
+        calculator: ["calculator", "sans-serif"],
+        amiri: ["amiri-quran", "serif"],
+        alquran: ["alquran-ali", "serif"],
+      },
     },
-    extend: {},
   },
   plugins: [],
-}
+};
