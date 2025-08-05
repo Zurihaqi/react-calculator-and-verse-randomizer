@@ -16,7 +16,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.8.1",
+    "@tsparticles/slim": "^3.9.1",
     "animate.css": "^4.1.1",
     "axios": "^1.11.0",
     "json-server": "^1.0.0-beta.3",
